@@ -9,3 +9,4 @@ E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.domain\obj\Debug\net8.0\B
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.domain\obj\Debug\net8.0\refint\BookStore.domain.dll
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.domain\obj\Debug\net8.0\BookStore.domain.pdb
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.domain\obj\Debug\net8.0\ref\BookStore.domain.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.domain\obj\Debug\net8.0\BookStore.domain.sourcelink.json

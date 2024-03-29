@@ -13,3 +13,4 @@ E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.domain.pdb
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.csproj.AssemblyReference.cache
 E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStor.832273C1.Up2Date
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.sourcelink.json
