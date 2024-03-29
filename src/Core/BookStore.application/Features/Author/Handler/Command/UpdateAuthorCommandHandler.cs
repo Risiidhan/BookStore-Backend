@@ -6,7 +6,7 @@ using MediatR;
 
 namespace BookStore.application.Features.Author.Handler.Command
 {
-    public class UpdateAuthorCommandHandler: IRequestHandler<UpdateAuthorCommand, AuthorDto>
+    public class UpdateAuthorCommandHandler : IRequestHandler<UpdateAuthorCommand, AuthorDto>
     {
         private readonly IMapper _mapper;
         private readonly IAuthorRepository _authorRepository;
@@ -17,7 +17,8 @@ namespace BookStore.application.Features.Author.Handler.Command
         }
         public async Task<AuthorDto> Handle(UpdateAuthorCommand request, CancellationToken cancellationToken)
         {
-            var authorModel = _mapper.Map<domain.Models.Author>(request.AuthorUpdateDto);
+            var authorModel = await _authorRepository.GetAsync(request.AuthorUpdateDto.Id);
+            authorModel = _mapper.Map(request.AuthorUpdateDto, authorModel);
             var updatedAuthor = await _authorRepository.AddAsync(authorModel);
             return _mapper.Map<AuthorDto>(updatedAuthor);
         }

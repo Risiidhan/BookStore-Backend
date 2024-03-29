@@ -18,7 +18,8 @@ namespace BookStore.application.Features.Book.Handler.Command
         }
         public async Task<BookDto> Handle(UpdateBookCommand request, CancellationToken cancellationToken)
         {
-            var bookModel = _mapper.Map<domain.Models.Book>(request.BookUpdateDto);
+            var bookModel = await _bookRepository.GetAsync(request.BookUpdateDto.Id);
+            bookModel = _mapper.Map(request.BookUpdateDto, bookModel);
             var updatedBook = await _bookRepository.UpdateAsync(bookModel);
             return _mapper.Map<BookDto>(updatedBook);
         }

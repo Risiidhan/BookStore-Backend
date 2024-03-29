@@ -10,20 +10,21 @@ using MediatR;
 
 namespace BookStore.application.Features.Category.Handler.Command
 {
-    public class UpdateCategoryCommandHandler: IRequestHandler<UpdateCategoryCommand, CategoryDto>
+    public class UpdateCategoryCommandHandler : IRequestHandler<UpdateCategoryCommand, CategoryDto>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
-        public UpdateCategoryCommandHandler(ICategoryRepository category , IMapper mapper)
+        public UpdateCategoryCommandHandler(ICategoryRepository category, IMapper mapper)
         {
             _mapper = mapper;
             _categoryRepository = category;
-            
+
         }
         public async Task<CategoryDto> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
-            var CategoryModel = _mapper.Map<domain.Models.Category>(request.CategoryUpdateDto);
-            var updatedCategory = await _categoryRepository.UpdateAsync(CategoryModel);
+            var categoryModel = await _categoryRepository.GetAsync(request.CategoryUpdateDto.Id);
+            categoryModel = _mapper.Map(request.CategoryUpdateDto, categoryModel);
+            var updatedCategory = await _categoryRepository.UpdateAsync(categoryModel);
             return _mapper.Map<CategoryDto>(updatedCategory);
         }
     }

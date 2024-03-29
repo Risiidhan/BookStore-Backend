@@ -7,6 +7,7 @@ namespace BookStore.application.DTO.Book
 {
     public class BookUpdateDto
     {
+        public int Id { get; set; }
         public int AuthorID { get; set; }
         public int CategoryID { get; set; }
         public int Price { get; set; }
