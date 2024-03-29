@@ -1,0 +1,15 @@
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.application.deps.json
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.application.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.application.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.AssemblyInfoInputs.cache
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.AssemblyInfo.cs
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.csproj.CoreCompileInputs.cache
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\refint\BookStore.application.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\ref\BookStore.application.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.domain.dll
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\bin\Debug\net8.0\BookStore.domain.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStore.application.csproj.AssemblyReference.cache
+E:\.NET\BookStore-Backend\BookStore\src\Core\BookStore.application\obj\Debug\net8.0\BookStor.832273C1.Up2Date

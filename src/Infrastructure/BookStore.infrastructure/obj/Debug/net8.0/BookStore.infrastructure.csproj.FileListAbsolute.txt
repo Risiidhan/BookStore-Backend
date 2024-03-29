@@ -1,0 +1,11 @@
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.infrastructure.deps.json
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.infrastructure.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.infrastructure.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.AssemblyInfoInputs.cache
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.AssemblyInfo.cs
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.csproj.CoreCompileInputs.cache
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\refint\BookStore.infrastructure.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\ref\BookStore.infrastructure.dll
