@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace BookStore.application.DTO.Category
 {
-    public class CategoryCreateDto : ICategoryValidatorDto
+    public class ICategoryValidatorDto
     {
+        public string Name { get; set; } = null!;
+        
     }
 }

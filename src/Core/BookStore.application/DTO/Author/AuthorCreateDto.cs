@@ -1,8 +1,8 @@
+
 namespace BookStore.application.DTO.Author
 {
-    public class AuthorCreateDto
+    public class AuthorCreateDto : IAuthorValidatorDto
     {
-        public string Email { get; set; } = null!;
-        public string Username { get; set; } = null!;
+
     }
 }

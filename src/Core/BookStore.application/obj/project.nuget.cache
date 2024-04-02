@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "XtUFhJl4uhQ9eNMitMdpzkqnvny0B5WByPyiGO9l7poDVcFWxZ3+oqn6f+6z+BrR2QKnfqrqFPSZSUjgt5jwvg==",
+  "dgSpecHash": "2Hje/9mmf+Nr3HK+HHUIoZ8qGlV7qJ+6EwqqTE27Z04PYvrEDe8R5XTHt6lDn4NSHXUUISIt8goM9uHXDBDfog==",
   "success": true,
   "projectFilePath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Core\\BookStore.application\\BookStore.application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\risii\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\risii\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
+    "C:\\Users\\risii\\.nuget\\packages\\fluentvalidation\\11.9.0\\fluentvalidation.11.9.0.nupkg.sha512",
+    "C:\\Users\\risii\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.9.0\\fluentvalidation.dependencyinjectionextensions.11.9.0.nupkg.sha512",
     "C:\\Users\\risii\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
     "C:\\Users\\risii\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.1\\mediatr.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
     "C:\\Users\\risii\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

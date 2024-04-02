@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using BookStore.application.DTO.Category;
+using BookStore.application.DTO.Category.Validator;
 using BookStore.application.Features.Category.Request.Command;
 using BookStore.application.Interface;
 using MediatR;
@@ -22,6 +23,11 @@ namespace BookStore.application.Features.Category.Handler.Command
         }
         public async Task<CategoryDto> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
+            var validator = new CategoryUpdateDtoValidator(_categoryRepository);
+            var result = await validator.ValidateAsync(request.CategoryUpdateDto);
+            if (!result.IsValid)
+                throw new Exception();
+
             var categoryModel = await _categoryRepository.GetAsync(request.CategoryUpdateDto.Id);
             categoryModel = _mapper.Map(request.CategoryUpdateDto, categoryModel);
             var updatedCategory = await _categoryRepository.UpdateAsync(categoryModel);

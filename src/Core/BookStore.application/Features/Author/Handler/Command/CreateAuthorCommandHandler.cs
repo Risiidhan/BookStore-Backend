@@ -1,5 +1,6 @@
 using AutoMapper;
 using BookStore.application.DTO.Author;
+using BookStore.application.DTO.Author.Validator;
 using BookStore.application.Features.Author.Request.Command;
 using BookStore.application.Interface;
 using MediatR;
@@ -17,6 +18,11 @@ namespace BookStore.application.Features.Author.Handler.Command
         }
         public async Task<AuthorDto> Handle(CreateAuthorCommand request, CancellationToken cancellationToken)
         {
+            var validator = new AuthorCreateDtoValidator();
+            var result = await validator.ValidateAsync(request.AuthorCreateDto);
+            if(!result.IsValid)
+                throw new Exception();
+
             var authorModel = _mapper.Map<domain.Models.Author>(request.AuthorCreateDto);
             var createdAuthor = await _authorRepository.AddAsync(authorModel);
             return _mapper.Map<AuthorDto>(createdAuthor);
