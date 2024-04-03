@@ -2,11 +2,12 @@ using AutoMapper;
 using BookStore.application.DTO.Author;
 using BookStore.application.Features.Author.Request.Command;
 using BookStore.application.Interface;
+using BookStore.application.Response;
 using MediatR;
 
 namespace BookStore.application.Features.Author.Handler.Command
 {
-    public class DeleteAuthorCommandHandler : IRequestHandler<DeleteAuthorCommand, AuthorDto>
+    public class DeleteAuthorCommandHandler : IRequestHandler<DeleteAuthorCommand, BaseCommandResponse>
     {
         private readonly IMapper _mapper;
         private readonly IAuthorRepository _authorRepository;
@@ -15,10 +16,22 @@ namespace BookStore.application.Features.Author.Handler.Command
             _authorRepository = authorRepository;
             _mapper = mapper;
         }
-        public async Task<AuthorDto> Handle(DeleteAuthorCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(DeleteAuthorCommand request, CancellationToken cancellationToken)
         {
-            var deletedAuthor = await _authorRepository.DeleteAsync(request.Id);
-            return _mapper.Map<AuthorDto>(deletedAuthor);
+            var res = new BaseCommandResponse();
+
+            var authorTodelete = await _authorRepository.GetAsync(request.Id);
+            if(authorTodelete == null)
+            {
+                res.Success = false;
+                res.Message = "Delete Failed";
+            }
+
+            var deletedAuthor = await _authorRepository.GetAsync(request.Id);
+            res.Id = deletedAuthor.Id;
+            res.Success = true;
+            res.Message = "Deleted Successfully";
+            return res;
         }
     }
 }

@@ -2,11 +2,12 @@ using AutoMapper;
 using BookStore.application.DTO.Category;
 using BookStore.application.Features.Category.Request.Command;
 using BookStore.application.Interface;
+using BookStore.application.Response;
 using MediatR;
 
 namespace BookStore.application.Features.Category.Handler.Command
 {
-    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, CategoryDto>
+    public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand, BaseCommandResponse>
     {
         private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
@@ -16,10 +17,20 @@ namespace BookStore.application.Features.Category.Handler.Command
             _categoryRepository = category;
 
         }
-        public async Task<CategoryDto> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
+            var res = new BaseCommandResponse();
+            var categoryTodelete = await _categoryRepository.GetAsync(request.Id);
+            if (categoryTodelete == null)
+            {
+                res.Success = false;
+                res.Message = "Delete Failed";
+            }
             var deletedCategory = await _categoryRepository.DeleteAsync(request.Id);
-            return _mapper.Map<CategoryDto>(deletedCategory);
+            res.Id = deletedCategory.Id;
+            res.Success = true;
+            res.Message = "Deleted Successfully";
+            return res;
         }
     }
 }

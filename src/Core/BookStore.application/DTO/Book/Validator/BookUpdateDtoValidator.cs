@@ -8,12 +8,17 @@ namespace BookStore.application.DTO.Book.Validator
         private readonly IBookRepository _bookRepository;
         private readonly IAuthorRepository _authorRepository;
         private readonly ICategoryRepository _categoryRepository;
-        
-        public BookUpdateDtoValidator(IBookRepository bookRepository)
+
+        public BookUpdateDtoValidator(
+            IBookRepository bookRepository,
+            IAuthorRepository authorRepository,
+            ICategoryRepository categoryRepository)
         {
 
+            _authorRepository = authorRepository;
+            _categoryRepository = categoryRepository;
             _bookRepository = bookRepository;
-            Include(new IBookValidator(_authorRepository,_categoryRepository));
+            Include(new IBookValidator(_authorRepository, _categoryRepository));
 
             RuleFor(p => p.Id)
                 .NotNull().WithMessage("{PropertyName} is required!")

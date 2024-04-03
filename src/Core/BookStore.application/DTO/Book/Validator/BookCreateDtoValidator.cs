@@ -11,8 +11,12 @@ namespace BookStore.application.DTO.Book.Validator
     {
         private readonly IAuthorRepository _authorRepository;
         private readonly ICategoryRepository _categoryRepository;
-        public BookCreateDtoValidator( IBookRepository bookRepository)
+        public BookCreateDtoValidator( 
+            IAuthorRepository authorRepository,
+            ICategoryRepository categoryRepository)
         {
+            _authorRepository = authorRepository;
+            _categoryRepository = categoryRepository;
             Include(new IBookValidator(_authorRepository,_categoryRepository));
         }
         

@@ -3,11 +3,12 @@ using BookStore.application.DTO.Author;
 using BookStore.application.DTO.Author.Validator;
 using BookStore.application.Features.Author.Request.Command;
 using BookStore.application.Interface;
+using BookStore.application.Response;
 using MediatR;
 
 namespace BookStore.application.Features.Author.Handler.Command
 {
-    public class UpdateAuthorCommandHandler : IRequestHandler<UpdateAuthorCommand, AuthorDto>
+    public class UpdateAuthorCommandHandler : IRequestHandler<UpdateAuthorCommand, BaseCommandResponse>
     {
         private readonly IMapper _mapper;
         private readonly IAuthorRepository _authorRepository;
@@ -16,17 +17,26 @@ namespace BookStore.application.Features.Author.Handler.Command
             _authorRepository = authorRepository;
             _mapper = mapper;
         }
-        public async Task<AuthorDto> Handle(UpdateAuthorCommand request, CancellationToken cancellationToken)
+        public async Task<BaseCommandResponse> Handle(UpdateAuthorCommand request, CancellationToken cancellationToken)
         {
+            var res = new BaseCommandResponse();
             var validator = new AuthorUpdateDtoValidator(_authorRepository);
             var result = await validator.ValidateAsync(request.AuthorUpdateDto);
-            if(!result.IsValid)
-                throw new Exception();
+            if (!result.IsValid)
+            {
+                res.Success = false;
+                res.Message = "Update Failed";
+                res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+            }
 
             var authorModel = await _authorRepository.GetAsync(request.AuthorUpdateDto.Id);
             authorModel = _mapper.Map(request.AuthorUpdateDto, authorModel);
             var updatedAuthor = await _authorRepository.UpdateAsync(authorModel);
-            return _mapper.Map<AuthorDto>(updatedAuthor);
+
+            res.Id = updatedAuthor.Id;
+            res.Success = true;
+            res.Message = "Updated Successfully";
+            return res;
         }
     }
 }
