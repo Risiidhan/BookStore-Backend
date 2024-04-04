@@ -19,6 +19,9 @@ namespace BookStore.application.Features.Book.Handler.Queries
         public async Task<BookDto> Handle(GetBookRequest request, CancellationToken cancellationToken)
         {
             var book = await _bookRepository.GetBookDetailList(request.Id);
+            if(book == null)
+                throw new Exception();
+                
             return _mapper.Map<BookDto>(book);
         }
     }

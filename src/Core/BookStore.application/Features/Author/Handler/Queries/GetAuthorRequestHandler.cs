@@ -23,6 +23,9 @@ namespace BookStore.application.Features.Author.Handler.Queries
         public async Task<AuthorDto> Handle(GetAuthorRequest request, CancellationToken cancellationToken)
         {
             var author = await _authorRepository.GetAsync(request.Id);
+              if(author == null)
+                throw new Exception();
+              
             return _mapper.Map<AuthorDto>(author);
         }
     }

@@ -40,7 +40,7 @@ namespace BookStore.application.Features.Book.Handler.Command
 
             var bookModel = await _bookRepository.GetAsync(request.BookUpdateDto.Id);
             bookModel = _mapper.Map(request.BookUpdateDto, bookModel);
-            var updatedBook = await _bookRepository.UpdateAsync(bookModel);
+            var updatedBook = await _bookRepository.UpdateAsync(bookModel!);
             
             res.Id = updatedBook.Id;
             res.Success = false;

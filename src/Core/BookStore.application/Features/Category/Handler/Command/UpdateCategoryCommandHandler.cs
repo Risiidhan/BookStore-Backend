@@ -36,7 +36,7 @@ namespace BookStore.application.Features.Category.Handler.Command
 
             var categoryModel = await _categoryRepository.GetAsync(request.CategoryUpdateDto.Id);
             categoryModel = _mapper.Map(request.CategoryUpdateDto, categoryModel);
-            var updatedCategory = await _categoryRepository.UpdateAsync(categoryModel);
+            var updatedCategory = await _categoryRepository.UpdateAsync(categoryModel!);
 
             res.Id = updatedCategory.Id;
             res.Success = false;

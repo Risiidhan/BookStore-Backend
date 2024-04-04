@@ -31,7 +31,7 @@ namespace BookStore.application.Features.Author.Handler.Command
 
             var authorModel = await _authorRepository.GetAsync(request.AuthorUpdateDto.Id);
             authorModel = _mapper.Map(request.AuthorUpdateDto, authorModel);
-            var updatedAuthor = await _authorRepository.UpdateAsync(authorModel);
+            var updatedAuthor = await _authorRepository.UpdateAsync(authorModel!);
 
             res.Id = updatedAuthor.Id;
             res.Success = true;

@@ -23,6 +23,9 @@ namespace BookStore.application.Features.Category.Handler.Queries
         public async Task<CategoryDto> Handle(GetCategoryRequest request, CancellationToken cancellationToken)
         {
             var category = await _categoryRepository.GetAsync(request.Id);
+              if(category == null)
+                throw new Exception();
+              
             return _mapper.Map<CategoryDto>(category);
         }
     }

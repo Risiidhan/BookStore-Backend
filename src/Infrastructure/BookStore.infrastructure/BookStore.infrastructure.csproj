@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\BookStore.application\BookStore.application.csproj" />
-
   </ItemGroup>
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
