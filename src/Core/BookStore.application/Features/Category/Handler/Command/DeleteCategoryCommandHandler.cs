@@ -26,7 +26,8 @@ namespace BookStore.application.Features.Category.Handler.Command
                 res.Success = false;
                 res.Message = "Delete Failed";
             }
-            var deletedCategory = await _categoryRepository.DeleteAsync(request.Id);
+            var CategoryModel = _mapper.Map<domain.Models.Category>(categoryTodelete);
+            var deletedCategory = await _categoryRepository.DeleteAsync(CategoryModel);
             res.Id = deletedCategory.Id;
             res.Success = true;
             res.Message = "Deleted Successfully";

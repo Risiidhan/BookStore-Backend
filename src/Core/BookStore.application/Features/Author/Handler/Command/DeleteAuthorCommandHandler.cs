@@ -24,10 +24,11 @@ namespace BookStore.application.Features.Author.Handler.Command
             if(authorTodelete == null)
             {
                 res.Success = false;
-                res.Message = "Delete Failed";
+                res.Message = "Delete Failed, Author not found!";
             }
 
-            var deletedAuthor = await _authorRepository.GetAsync(request.Id);
+            var authorModel = _mapper.Map<domain.Models.Author>(authorTodelete);
+            var deletedAuthor = await _authorRepository.DeleteAsync(authorModel);
             res.Id = deletedAuthor.Id;
             res.Success = true;
             res.Message = "Deleted Successfully";

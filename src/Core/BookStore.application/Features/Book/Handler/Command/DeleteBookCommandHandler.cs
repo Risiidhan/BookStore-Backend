@@ -26,7 +26,8 @@ namespace BookStore.application.Features.Book.Handler.Command
                 res.Success = false;
                 res.Message = "Delete Failed";
             }
-            var deletedBook = await _bookRepository.DeleteAsync(request.Id);
+            var bookModel = _mapper.Map<domain.Models.Book>(bookTodelete);
+            var deletedBook = await _bookRepository.DeleteAsync(bookModel);
 
             res.Id = deletedBook.Id;
             res.Success = true;
