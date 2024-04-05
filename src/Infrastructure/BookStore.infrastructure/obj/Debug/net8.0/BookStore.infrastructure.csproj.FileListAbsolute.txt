@@ -9,3 +9,12 @@ E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\refint\BookStore.infrastructure.dll
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.pdb
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\ref\BookStore.infrastructure.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.infrastructure.runtimeconfig.json
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.application.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.domain.dll
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.application.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\bin\Debug\net8.0\BookStore.domain.pdb
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.csproj.AssemblyReference.cache
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.sourcelink.json
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStor.420369CB.Up2Date
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.infrastructure\obj\Debug\net8.0\BookStore.infrastructure.genruntimeconfig.cache

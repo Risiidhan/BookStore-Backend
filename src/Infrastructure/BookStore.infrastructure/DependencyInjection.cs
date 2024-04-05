@@ -13,7 +13,7 @@ namespace BookStore.infrastructure
         {
             services.AddDbContext<ApplicationDbContext> (opt =>
                 opt.UseSqlServer(
-                    configuration.GetConnectionString("ConnectionString")));
+                    configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IBookRepository, BookRepository>();
