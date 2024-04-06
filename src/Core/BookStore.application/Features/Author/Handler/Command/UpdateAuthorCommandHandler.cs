@@ -36,6 +36,7 @@ namespace BookStore.application.Features.Author.Handler.Command
             res.Id = updatedAuthor.Id;
             res.Success = true;
             res.Message = "Updated Successfully";
+            res.Result = updatedAuthor;
             return res;
         }
     }

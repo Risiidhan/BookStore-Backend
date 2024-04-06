@@ -7,11 +7,9 @@ namespace BookStore.application.DTO.Book
 {
     public class BookDto : BaseDto
     {
-        public int AuthorID { get; set; }
-        public AuthorDto AuthorDto { get; set; } = null!;
-        public int CategoryID { get; set; }
-        public CategoryDto CategoryDto { get; set; } = null!;
         public int Price { get; set; }
         public int QuantityAvailable { get; set; }
+        public AuthorDto Author { get; set; } = null!;
+        public CategoryDto Category { get; set; } = null!;
     }
 }

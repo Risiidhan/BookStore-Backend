@@ -41,6 +41,7 @@ namespace BookStore.application.Features.Category.Handler.Command
             res.Id = updatedCategory.Id;
             res.Success = false;
             res.Message = "Update Successfully";
+            res.Result = updatedCategory;
             return res;
         }
     }

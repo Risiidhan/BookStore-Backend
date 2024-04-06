@@ -44,7 +44,8 @@ namespace BookStore.application.Features.Book.Handler.Command
             
             res.Id = createdBook.Id;
             res.Success = true;
-            res.Message = "Created Failed";
+            res.Message = "Created Successfully";
+            res.Result = createdBook;
             return res;
         }
     }

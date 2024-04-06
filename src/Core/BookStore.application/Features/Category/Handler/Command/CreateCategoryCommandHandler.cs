@@ -39,6 +39,7 @@ namespace BookStore.application.Features.Category.Handler.Command
             res.Id = createdCategory.Id;
             res.Success = true;
             res.Message = "Created Successfully";
+            res.Result = createdCategory;
             return res;
         }
     }

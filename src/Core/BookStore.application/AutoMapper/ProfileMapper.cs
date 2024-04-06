@@ -11,10 +11,16 @@ namespace BookStore.application.AutoMapper
     {
         public ProfileMapper()
         {
-            CreateMap<BookDto,Book>().ReverseMap();
-            CreateMap<BookListDto,Book>().ReverseMap();
-            CreateMap<AuthorDto,Author>().ReverseMap();
-            CreateMap<CategoryDto,Category>().ReverseMap();
+            CreateMap<BookDto, Book>().ReverseMap();
+            CreateMap<BookCreateDto, Book>().ReverseMap();
+            CreateMap<BookUpdateDto, Book>().ReverseMap();
+            CreateMap<BookListDto, Book>().ReverseMap();
+            CreateMap<AuthorDto, Author>().ReverseMap();
+            CreateMap<AuthorCreateDto, Author>().ReverseMap();
+            CreateMap<AuthorUpdateDto, Author>().ReverseMap();
+            CreateMap<CategoryDto, Category>().ReverseMap();
+            CreateMap<CategoryCreateDto, Category>().ReverseMap();
+            CreateMap<CategoryUpdateDto, Category>().ReverseMap();
         }
     }
 }

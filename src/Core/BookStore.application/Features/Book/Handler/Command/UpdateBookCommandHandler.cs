@@ -45,6 +45,7 @@ namespace BookStore.application.Features.Book.Handler.Command
             res.Id = updatedBook.Id;
             res.Success = false;
             res.Message = "Update Successfully";
+            res.Result = updatedBook;
             return res;
         }
     }

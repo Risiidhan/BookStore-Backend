@@ -27,6 +27,7 @@ namespace BookStore.application.Features.Author.Handler.Command
                 res.Success = false;
                 res.Message = "Creation Failed";
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
             }
 
             var authorModel = _mapper.Map<domain.Models.Author>(request.AuthorCreateDto);
@@ -35,6 +36,7 @@ namespace BookStore.application.Features.Author.Handler.Command
             res.Id = createdAuthor.Id;
             res.Success = true;
             res.Message = "Created Successfully";
+            res.Result = createdAuthor;
             return res;
         }
     }
