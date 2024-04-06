@@ -9,7 +9,7 @@ namespace BookStore.application.Response
     {
         public static string CreationFailed => "Failed To Create";
         public static string UpdateFailed => "Failed To Update";
-        public static string DeleteFailed => "Failed To Delete";
+        public static string DeleteFailed => "Failed To Delete, Request Id is missing";
 
         public static string GetCreatedSuccessfully(string name) => $"Created {name} Successfully";
         public static string GetUpdatedSuccessfully(string name) => $"Updated {name} Successfully";

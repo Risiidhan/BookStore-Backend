@@ -23,15 +23,17 @@ namespace BookStore.application.Features.Category.Handler.Command
             var categoryTodelete = await _categoryRepository.GetAsync(request.Id);
             if (categoryTodelete == null)
             {
+                res.Id = request.Id;
                 res.Success = false;
                 res.Message = CommonMessage.DeleteFailed;
+                return res;
             }
             var CategoryModel = _mapper.Map<domain.Models.Category>(categoryTodelete);
             var deletedCategory = await _categoryRepository.DeleteAsync(CategoryModel);
 
             res.Id = deletedCategory.Id;
             res.Success = true;
-            res.Message = CommonMessage.GetCreatedSuccessfully(deletedCategory.Name);
+            res.Message = CommonMessage.GetDeletedSuccessfully(deletedCategory.Name);
             return res;
         }
     }

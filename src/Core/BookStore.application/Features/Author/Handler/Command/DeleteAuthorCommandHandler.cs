@@ -23,8 +23,10 @@ namespace BookStore.application.Features.Author.Handler.Command
             var authorTodelete = await _authorRepository.GetAsync(request.Id);
             if(authorTodelete == null)
             {
+                res.Id = request.Id;
                 res.Success = false;
                 res.Message = CommonMessage.DeleteFailed;
+                return res;
             }
 
             var authorModel = _mapper.Map<domain.Models.Author>(authorTodelete);

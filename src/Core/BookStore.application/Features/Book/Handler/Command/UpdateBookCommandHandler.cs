@@ -36,6 +36,7 @@ namespace BookStore.application.Features.Book.Handler.Command
                 res.Success = false;
                 res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
             }
 
             var bookModel = await _bookRepository.GetAsync(request.BookUpdateDto.Id);

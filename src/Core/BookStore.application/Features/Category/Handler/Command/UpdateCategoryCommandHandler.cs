@@ -32,6 +32,7 @@ namespace BookStore.application.Features.Category.Handler.Command
                 res.Success = false;
                 res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
             }
 
             var categoryModel = await _categoryRepository.GetAsync(request.CategoryUpdateDto.Id);

@@ -32,12 +32,15 @@ namespace BookStore.infrastructure.Repository
 
         public async Task<T?> GetAsync(int id)
         {
-             return await _dbContext.Set<T>().FindAsync(id);
+            var item = await _dbContext.Set<T>().FindAsync(id);
+            if (item == null)
+                return null;
+            return item;
         }
 
         public async Task<T> UpdateAsync(T entity)
         {
-             _dbContext.Set<T>().Update(entity);
+            _dbContext.Set<T>().Update(entity);
             await _dbContext.SaveChangesAsync();
             return entity;
         }

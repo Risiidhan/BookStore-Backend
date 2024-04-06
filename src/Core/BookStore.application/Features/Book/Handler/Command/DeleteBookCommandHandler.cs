@@ -24,9 +24,10 @@ namespace BookStore.application.Features.Book.Handler.Command
             var bookTodelete = await _bookRepository.GetAsync(request.Id);
             if (bookTodelete == null)
             {
-                var mes = new CommonMessage();
+                res.Id = request.Id;
                 res.Success = false;
                 res.Message = CommonMessage.DeleteFailed;
+                return res;
             }
             var bookModel = _mapper.Map<domain.Models.Book>(bookTodelete);
             var deletedBook = await _bookRepository.DeleteAsync(bookModel);

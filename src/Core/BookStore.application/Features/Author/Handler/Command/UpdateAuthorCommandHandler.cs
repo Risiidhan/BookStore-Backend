@@ -27,6 +27,7 @@ namespace BookStore.application.Features.Author.Handler.Command
                 res.Success = false;
                 res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
             }
 
             var authorModel = await _authorRepository.GetAsync(request.AuthorUpdateDto.Id);

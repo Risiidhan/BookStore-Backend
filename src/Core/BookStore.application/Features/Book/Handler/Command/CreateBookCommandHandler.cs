@@ -37,6 +37,8 @@ namespace BookStore.application.Features.Book.Handler.Command
                 res.Success = false;
                 res.Message = CommonMessage.CreationFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
+
             }
 
             var bookModel = _mapper.Map<domain.Models.Book>(request.BookCreateDto);

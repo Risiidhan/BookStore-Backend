@@ -32,6 +32,7 @@ namespace BookStore.application.Features.Category.Handler.Command
                 res.Success = false;
                 res.Message = CommonMessage.CreationFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
+                return res;
             }
             var CategoryModel = _mapper.Map<domain.Models.Category>(request.CategoryCreateDto);
             var createdCategory = await _categoryRepository.AddAsync(CategoryModel);

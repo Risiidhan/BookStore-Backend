@@ -16,26 +16,33 @@ namespace BookStore.application.DTO.Book.Validator
             _categoryRepository = categoryRepository;
             RuleFor(p => p.Price)
                 .NotNull().WithMessage("{PropertyName} is required!");
-            
-            RuleFor(p =>p.QuantityAvailable)
+
+            RuleFor(p => p.QuantityAvailable)
                 .NotNull().WithMessage("{PropertyName} is required!")
                 .GreaterThan(1).WithMessage("{PropertyName} should be more than {ComparisonValue}");
 
             RuleFor(p => p.AuthorID)
                 .NotNull().WithMessage("{PropertyName} is required!")
-                .MustAsync(async(id,token) =>
+                .MustAsync(async (id, token) =>
                 {
                     var authorExists = await _authorRepository.GetAsync(id);
                     return authorExists != null;
                 });
 
-              RuleFor(p => p.CategoryID)
+            RuleFor(p => p.CategoryID)
                 .NotNull().WithMessage("{PropertyName} is required!")
-                .MustAsync(async(id,token) =>
+                .MustAsync(async (id, token) =>
                 {
                     var categoryExists = await _categoryRepository.GetAsync(id);
                     return categoryExists != null;
                 });
+
+            RuleFor(p => p.Name)
+                .NotEmpty().WithMessage("{PropertyName} is required!")
+                .NotNull().WithMessage("{PropertyName} is required!")
+                .MaximumLength(20).WithMessage("{PropertyName} should be less than {Maxlength}")
+                .MinimumLength(2).WithMessage("{PropertyName} should be more than {MinLength}");
+
         }
 
     }

@@ -14,8 +14,14 @@ namespace BookStore.application.DTO.Author.Validator
             RuleFor(p =>p.Username)
                 .NotEmpty().WithMessage("{PropertyName} is required!")
                 .NotNull().WithMessage("{PropertyName} is required!")
-                .MaximumLength(20).WithMessage("{PropertyName} should be less than {ComparisonValue}")
-                .MinimumLength(2).WithMessage("{PropertyName} should be more than {ComparisonValue}");
+                .MaximumLength(20).WithMessage("{PropertyName} should be less than {Maxlength}")
+                .MinimumLength(2).WithMessage("{PropertyName} should be more than {MinLength}");
+
+            RuleFor(p =>p.Name)
+                .NotEmpty().WithMessage("{PropertyName} is required!")
+                .NotNull().WithMessage("{PropertyName} is required!")
+                .MaximumLength(20).WithMessage("{PropertyName} should be less than {Maxlength}")
+                .MinimumLength(2).WithMessage("{PropertyName} should be more than {MinLength}");
         }
     }
 }
