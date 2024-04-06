@@ -35,24 +35,24 @@ namespace BookStore.API.Controller
         public async Task<ActionResult<AuthorDto>> Post([FromBody] AuthorCreateDto authorCreateDto)
         {
             var author = new CreateAuthorCommand{ AuthorCreateDto = authorCreateDto };
-            var createdAuthor = await _mediator.Send(author);
-            return Ok(createdAuthor);
+            var result = await _mediator.Send(author);
+            return Ok(result);
         }
 
         [HttpPut]
         public async Task<ActionResult<AuthorDto>> Put([FromBody] AuthorUpdateDto authorUpdateDto)
         {
             var author = new UpdateAuthorCommand{ AuthorUpdateDto = authorUpdateDto };
-            var updatedAuthor = await _mediator.Send(author);
-            return Ok(updatedAuthor);
+            var result = await _mediator.Send(author);
+            return Ok(result);
         }
 
         [HttpDelete]
         public async Task<ActionResult<AuthorDto>> Delete(int id)
         {
             var author = new DeleteAuthorCommand{ Id = id };
-            var deletedAuthor = await _mediator.Send(author);
-            return Ok(deletedAuthor);
+            var result = await _mediator.Send(author);
+            return Ok(result);
         }
 
     }

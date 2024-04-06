@@ -34,7 +34,7 @@ namespace BookStore.application.Features.Book.Handler.Command
             if (!result.IsValid)
             {
                 res.Success = false;
-                res.Message = "Update Failed";
+                res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
@@ -43,8 +43,8 @@ namespace BookStore.application.Features.Book.Handler.Command
             var updatedBook = await _bookRepository.UpdateAsync(bookModel!);
             
             res.Id = updatedBook.Id;
-            res.Success = false;
-            res.Message = "Update Successfully";
+            res.Success = true;
+            res.Message = CommonMessage.GetUpdatedSuccessfully(updatedBook.Name);
             res.Result = updatedBook;
             return res;
         }

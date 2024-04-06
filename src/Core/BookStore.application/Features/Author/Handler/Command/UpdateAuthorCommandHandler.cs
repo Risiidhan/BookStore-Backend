@@ -25,7 +25,7 @@ namespace BookStore.application.Features.Author.Handler.Command
             if (!result.IsValid)
             {
                 res.Success = false;
-                res.Message = "Update Failed";
+                res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
@@ -35,7 +35,7 @@ namespace BookStore.application.Features.Author.Handler.Command
 
             res.Id = updatedAuthor.Id;
             res.Success = true;
-            res.Message = "Updated Successfully";
+            res.Message = CommonMessage.GetUpdatedSuccessfully(updatedAuthor.Name);
             res.Result = updatedAuthor;
             return res;
         }

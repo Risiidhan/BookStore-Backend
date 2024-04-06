@@ -30,7 +30,7 @@ namespace BookStore.application.Features.Category.Handler.Command
             if (!result.IsValid)
             {
                 res.Success = false;
-                res.Message = "Update Failed";
+                res.Message = CommonMessage.UpdateFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
@@ -39,8 +39,8 @@ namespace BookStore.application.Features.Category.Handler.Command
             var updatedCategory = await _categoryRepository.UpdateAsync(categoryModel!);
 
             res.Id = updatedCategory.Id;
-            res.Success = false;
-            res.Message = "Update Successfully";
+            res.Success = true;
+            res.Message = CommonMessage.GetUpdatedSuccessfully(updatedCategory.Name);
             res.Result = updatedCategory;
             return res;
         }

@@ -24,13 +24,14 @@ namespace BookStore.application.Features.Category.Handler.Command
             if (categoryTodelete == null)
             {
                 res.Success = false;
-                res.Message = "Delete Failed";
+                res.Message = CommonMessage.DeleteFailed;
             }
             var CategoryModel = _mapper.Map<domain.Models.Category>(categoryTodelete);
             var deletedCategory = await _categoryRepository.DeleteAsync(CategoryModel);
+
             res.Id = deletedCategory.Id;
             res.Success = true;
-            res.Message = "Deleted Successfully";
+            res.Message = CommonMessage.GetCreatedSuccessfully(deletedCategory.Name);
             return res;
         }
     }

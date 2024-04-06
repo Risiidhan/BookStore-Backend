@@ -35,7 +35,7 @@ namespace BookStore.application.Features.Book.Handler.Command
             if (!result.IsValid)
             {
                 res.Success = false;
-                res.Message = "Creation Failed";
+                res.Message = CommonMessage.CreationFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
             }
 
@@ -44,7 +44,7 @@ namespace BookStore.application.Features.Book.Handler.Command
             
             res.Id = createdBook.Id;
             res.Success = true;
-            res.Message = "Created Successfully";
+            res.Message = CommonMessage.GetCreatedSuccessfully(createdBook.Name);
             res.Result = createdBook;
             return res;
         }

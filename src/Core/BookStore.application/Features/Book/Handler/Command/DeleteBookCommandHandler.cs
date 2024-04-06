@@ -20,18 +20,20 @@ namespace BookStore.application.Features.Book.Handler.Command
         public async Task<BaseCommandResponse> Handle(DeleteBookCommand request, CancellationToken cancellationToken)
         {
             var res = new BaseCommandResponse();
+
             var bookTodelete = await _bookRepository.GetAsync(request.Id);
             if (bookTodelete == null)
             {
+                var mes = new CommonMessage();
                 res.Success = false;
-                res.Message = "Delete Failed";
+                res.Message = CommonMessage.DeleteFailed;
             }
             var bookModel = _mapper.Map<domain.Models.Book>(bookTodelete);
             var deletedBook = await _bookRepository.DeleteAsync(bookModel);
 
             res.Id = deletedBook.Id;
             res.Success = true;
-            res.Message = "Deleted Successfully";
+            res.Message = CommonMessage.GetDeletedSuccessfully(deletedBook.Name);
             return res;
         }
     }

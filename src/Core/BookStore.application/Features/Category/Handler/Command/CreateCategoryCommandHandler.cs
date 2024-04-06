@@ -30,7 +30,7 @@ namespace BookStore.application.Features.Category.Handler.Command
             if (!result.IsValid)
             {
                 res.Success = false;
-                res.Message = "Creation Failed";
+                res.Message = CommonMessage.CreationFailed;
                 res.Error = result.Errors.Select(q => q.ErrorMessage).ToList();
             }
             var CategoryModel = _mapper.Map<domain.Models.Category>(request.CategoryCreateDto);
@@ -38,7 +38,7 @@ namespace BookStore.application.Features.Category.Handler.Command
 
             res.Id = createdCategory.Id;
             res.Success = true;
-            res.Message = "Created Successfully";
+            res.Message = CommonMessage.GetCreatedSuccessfully(createdCategory.Name);
             res.Result = createdCategory;
             return res;
         }
