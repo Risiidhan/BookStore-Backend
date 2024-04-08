@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Core\BookStore.application\BookStore.application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\BookStore.infrastructure\BookStore.infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\BookStore.identity\BookStore.identity.csproj" />
   </ItemGroup>
 
   <ItemGroup>

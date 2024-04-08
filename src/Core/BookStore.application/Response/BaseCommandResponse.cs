@@ -14,5 +14,8 @@ namespace BookStore.application.Response
 
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public object? Result { get; set; }
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string? Token { get; set; }
     }
 }

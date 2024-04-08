@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.infrastructure", "src\Infrastructure\BookStore.infrastructure\BookStore.infrastructure.csproj", "{E204CD5E-CA21-4DB9-8057-0621D930E49E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Identity", "src\Infrastructure\BookStore.Identity\BookStore.Identity.csproj", "{9168FD08-341A-4151-A901-181F5873A1D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{E204CD5E-CA21-4DB9-8057-0621D930E49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E204CD5E-CA21-4DB9-8057-0621D930E49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E204CD5E-CA21-4DB9-8057-0621D930E49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9168FD08-341A-4151-A901-181F5873A1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9168FD08-341A-4151-A901-181F5873A1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9168FD08-341A-4151-A901-181F5873A1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9168FD08-341A-4151-A901-181F5873A1D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{15FA5525-FFBD-4250-9E53-7C249843CE15} = {555853BF-2D27-4592-A477-B9A868000D66}
@@ -53,5 +59,6 @@ Global
 		{C5BD7EA9-F5C3-4132-8568-51ECC62E9A4F} = {6F3AA709-9757-4EFB-BBFF-CAFF964D3ED7}
 		{05397A8E-311C-44E2-A5C2-2FCE8E464767} = {555853BF-2D27-4592-A477-B9A868000D66}
 		{E204CD5E-CA21-4DB9-8057-0621D930E49E} = {05397A8E-311C-44E2-A5C2-2FCE8E464767}
+		{9168FD08-341A-4151-A901-181F5873A1D4} = {05397A8E-311C-44E2-A5C2-2FCE8E464767}
 	EndGlobalSection
 EndGlobal
