@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HbliizibcbjdKmnmHJMIIWswsTIK63mLX7n5/94hmNTZc8cVAq7XVNQ0Ei+zNuSef5eKNFGqLrV6/3ubAo7Gpw==",
+  "dgSpecHash": "DCeIp3oXDA5K/OX8+bqVKQxK8uBgtIbL2E/vGDnk6uu/a4Z60RdOJf++Zd4S0nuPMVDId75N7t2hOPrRuLAQVw==",
   "success": true,
   "projectFilePath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\API\\BookStore.API\\BookStore.API.csproj",
   "expectedPackageFiles": [
