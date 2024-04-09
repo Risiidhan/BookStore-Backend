@@ -2,15 +2,18 @@ using BookStore.application.DTO.Category;
 using BookStore.application.Features.Category.Request.Command;
 using BookStore.application.Features.Category.Request.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.API.Controller
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
+
     public class CategoryController : ControllerBase
     {
-         public readonly IMediator _mediator;
+        public readonly IMediator _mediator;
 
         public CategoryController(IMediator mediatr)
         {
@@ -27,31 +30,34 @@ namespace BookStore.API.Controller
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoryDto>> Get(int id)
         {
-            var category = await _mediator.Send(new GetCategoryRequest{ Id = id });
+            var category = await _mediator.Send(new GetCategoryRequest { Id = id });
             return Ok(category);
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CategoryDto>> Post([FromBody] CategoryCreateDto categoryCreateDto)
         {
-            var category = new CreateCategoryCommand{ CategoryCreateDto = categoryCreateDto };
+            var category = new CreateCategoryCommand { CategoryCreateDto = categoryCreateDto };
             var result = await _mediator.Send(category);
             return Ok(result);
         }
 
         [HttpPut]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CategoryDto>> Put([FromBody] CategoryUpdateDto categoryUpdateDto)
         {
-            var category = new UpdateCategoryCommand{ CategoryUpdateDto = categoryUpdateDto };
+            var category = new UpdateCategoryCommand { CategoryUpdateDto = categoryUpdateDto };
             var result = await _mediator.Send(category);
             return Ok(result);
         }
 
         [HttpDelete]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<CategoryDto>> Delete(int id)
         {
-            var category = new DeleteCategoryCommand{ Id = id };
-             var result = await _mediator.Send(category);
+            var category = new DeleteCategoryCommand { Id = id };
+            var result = await _mediator.Send(category);
             return Ok(result);
         }
 
