@@ -77,7 +77,7 @@ namespace BookStore.Identity.services
             if (!result.Succeeded)
                 throw new Exception($"Credentials for '{request.Username} aren't valid'.");
 
-            var token = GenerateToken(user);
+            var token =  await GenerateToken(user);
 
             var res = new LoginResponse();
             if (token == null)
@@ -90,7 +90,7 @@ namespace BookStore.Identity.services
             {
                 res.UserName = request.Username;
                 res.Message = "logged in Successfully!";
-                res.Token = token.ToString();
+                res.Token = token;
             }
             return res;
         }
@@ -98,11 +98,11 @@ namespace BookStore.Identity.services
         public async Task<UserRegisterResponse> Register(RegisterUserDto registerUserDto)
         {
             var userExists = await _userManager.FindByNameAsync(registerUserDto.Username);
-            if (userExists == null)
+            if (userExists != null)
                 throw new Exception("Username Already Exists");
 
             var emailExists = await _userManager.FindByEmailAsync(registerUserDto.Email);
-            if (emailExists == null)
+            if (emailExists != null)
                 throw new Exception("Email Already Exists");
 
             var appUser = new AppUser
