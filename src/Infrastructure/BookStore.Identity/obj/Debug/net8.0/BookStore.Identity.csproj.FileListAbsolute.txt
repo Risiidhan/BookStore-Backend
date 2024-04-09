@@ -11,10 +11,10 @@ E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\De
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.AssemblyInfo.cs
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.csproj.CoreCompileInputs.cache
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.sourcelink.json
-E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStor.56B482DA.Up2Date
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.dll
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\refint\BookStore.Identity.dll
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.pdb
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\ref\BookStore.Identity.dll
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\bin\Debug\net8.0\BookStore.Identity.runtimeconfig.json
 E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.Identity\obj\Debug\net8.0\BookStore.Identity.genruntimeconfig.cache
+E:\.NET\BookStore-Backend\BookStore\src\Infrastructure\BookStore.identity\obj\Debug\net8.0\BookStor.8CCBDB7A.Up2Date

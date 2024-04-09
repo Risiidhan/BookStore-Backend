@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text.Json.Serialization;
 
 namespace BookStore.application.DTO.AppUser
 {
     public class LoginResponse
     {
-        public string Id { get; set; } = null!;
         public string UserName { get; set; } = null!;
         public string Message { get; set; } = null!;
-        public string Token { get; set; } = null!;
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public string? Token { get; set; } = null!;
+
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        public List<string>? Error { get; set; } = null!;
     }
 }

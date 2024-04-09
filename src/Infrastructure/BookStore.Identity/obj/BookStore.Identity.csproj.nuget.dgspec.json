@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.Identity.csproj": {}
+    "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.identity.csproj": {}
   },
   "projects": {
     "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Core\\BookStore.application\\BookStore.application.csproj": {
@@ -152,12 +152,12 @@
         }
       }
     },
-    "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.Identity.csproj": {
+    "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.Identity.csproj",
-        "projectName": "BookStore.Identity",
-        "projectPath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.Identity.csproj",
+        "projectUniqueName": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.identity.csproj",
+        "projectName": "BookStore.identity",
+        "projectPath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.identity.csproj",
         "packagesPath": "C:\\Users\\risii\\.nuget\\packages\\",
         "outputPath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\obj\\",
         "projectStyle": "PackageReference",
@@ -204,6 +204,12 @@
               "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.2, )"
             },

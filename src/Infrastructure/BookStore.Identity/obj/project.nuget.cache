@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WW9r/720K8MdtJIe9edocKLsWy8p8OKL/IfmQmevJkRhh0n3Ci33pCorTYxVoLzjjm/6ADPKiaISg8f755EZ1Q==",
+  "dgSpecHash": "1ALzJg/sOv26AVloPHMdHM/lRU6bQ9isrMBCxPR3gvEdpuNnYw5GoKCc0KWJ1vtAtpHJM9+fr9h19r4mW3WfoA==",
   "success": true,
-  "projectFilePath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.Identity.csproj",
+  "projectFilePath": "E:\\.NET\\BookStore-Backend\\BookStore\\src\\Infrastructure\\BookStore.identity\\BookStore.identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\risii\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\risii\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.0.1\\automapper.extensions.microsoft.dependencyinjection.8.0.1.nupkg.sha512",
