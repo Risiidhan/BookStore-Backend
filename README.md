@@ -1,7 +1,7 @@
 
 # BookStore Backend System
 
-This System is a simple software designed to latest .NET design patterns, tools and architecture. Built with a clean architecture approach, the system is organized into distinct layers: API layer, Domain layer, and Infrastructure layer and SQL Server. 
+This System is a simple software designed to latest .NET version 8.0.2 design patterns, tools and architecture. Built with a clean architecture approach, the system is organized into distinct layers: API layer, Domain layer, and Infrastructure layer and SQL Server. 
 
 - _Follows CQRS approach with Mediatr_
 - _Repository patterns_
@@ -10,6 +10,7 @@ This System is a simple software designed to latest .NET design patterns, tools 
 - _JWT authentication_
 - _role based access control_
 - _global exception_
+- _Navigation property_
 
 
 ## Folder Structure
