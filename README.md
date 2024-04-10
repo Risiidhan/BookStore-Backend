@@ -71,34 +71,3 @@ Move to BookStore-Backend\BookStore\src\API>
 ```
 
 
-## Run Migration
-
-**Change connection string in appSetting.json to your appropriate DB server**
-
-```bash
- "ConnectionStrings": {
-    "DefaultConnection": "Server=ServerName;Database=DBName;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=False",
-    "AuthDBDefaultConnection": "Server=ServerName;Database=DBName;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=False"
-  },
-```
-**Initial Migration** -
-move to BookStore-Backend\BookStore>
-```bash
-  dotnet ef migrations add InitialMigration --startup-project API\BookStore.API --project Infrastructure\BookStore.identity --context AuthApplicationDbContext
-```
-
-**Update Database**
-```bash
-    dotnet ef database update --startup-project API\BookStore.API --project Infrastructure\BookStore.identity --context AuthApplicationDbContext
-```
-## Build Project
-```bash
-    dotnet build
-```
-
-## Run Project
-Move to BookStore-Backend\BookStore\src\API>
-```bash
-    dotnet watch run
-```
-
