@@ -50,16 +50,30 @@ Here the Identity user authentication with JWT token service implementation with
     "AuthDBDefaultConnection": "Server=ServerName;Database=DBName;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=False"
   },
 ```
+
 **Initial Migration** -
+move to BookStore-Backend\BookStore>
+```bash
+  dotnet ef migrations add InitialMigration --startup-project API\BookStore.API --project Infrastructure\BookStore.infrastructure --context ApplicationDbContext
+```
+
+**Update Database**
+```bash
+    dotnet ef database update --startup-project API\BookStore.API --project Infrastructure\BookStore.infrastructure --context ApplicationDbContext
+```
+
+
+**Initial Migration for Authentication** -
 move to BookStore-Backend\BookStore>
 ```bash
   dotnet ef migrations add InitialMigration --startup-project API\BookStore.API --project Infrastructure\BookStore.identity --context AuthApplicationDbContext
 ```
 
-**Update Database**
+**Update Database for Authentication**
 ```bash
     dotnet ef database update --startup-project API\BookStore.API --project Infrastructure\BookStore.identity --context AuthApplicationDbContext
 ```
+
 ## Build Project
 ```bash
     dotnet build
